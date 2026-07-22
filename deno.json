@@ -1,0 +1,9 @@
+{
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    },
+    "exclude": ["android-app/", "node_modules/", ".git/"]
+  },
+  "imports": {}
+}
