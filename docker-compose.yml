@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  pertinent-api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - BROKER_TYPE=mt5
+      - BROKER_LOGIN=${BROKER_LOGIN}
+      - BROKER_PASSWORD=${BROKER_PASSWORD}
+      - BROKER_SERVER=${BROKER_SERVER}
+      - AUTO_TRADING=true
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./backend:/app
+    restart: unless-stopped
+
+networks:
+  default:
+    driver: bridge
